@@ -200,13 +200,13 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       <section className="w-full">
         {mediaUrl ? (
           category === 'video' || mediaType === 'video' ? (
-            <div className="overflow-hidden rounded-xl border border-border bg-black aspect-[16/9] w-full flex items-center justify-center">
+            <div className="overflow-hidden rounded-xl border border-border bg-black aspect-[9/16] max-w-sm mx-auto w-full flex items-center justify-center shadow-2xl">
               <video
                 src={mediaUrl}
                 controls
                 autoPlay={false}
                 playsInline
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
               />
             </div>
           ) : category === 'website' ? (

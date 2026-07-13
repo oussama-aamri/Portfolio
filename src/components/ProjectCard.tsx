@@ -17,7 +17,7 @@ export const CATEGORY_LABELS: Record<string, string> = {
   video: 'Video Production',
 };
 
-export default function ProjectCard({ project, variant = 'landscape' }: ProjectCardProps) {
+export default function ProjectCard({ project, variant }: ProjectCardProps) {
   const { title, slug, category, tools, project_media } = project;
   
   // Find primary image/video (position 0 or first item)
@@ -27,6 +27,9 @@ export default function ProjectCard({ project, variant = 'landscape' }: ProjectC
 
   const publicUrl = primaryMedia ? getMediaPublicUrl(primaryMedia.storage_path) : null;
   const isVideo = primaryMedia?.media_type === 'video';
+
+  // Automatically default to portrait for video category
+  const cardVariant = variant || (category === 'video' ? 'portrait' : 'landscape');
 
   const categoryLabel = CATEGORY_LABELS[category] || category;
 
@@ -42,7 +45,7 @@ export default function ProjectCard({ project, variant = 'landscape' }: ProjectC
     }
   };
 
-  if (variant === 'portrait') {
+  if (cardVariant === 'portrait') {
     return (
       <Link 
         href={`/work/${slug}`}
