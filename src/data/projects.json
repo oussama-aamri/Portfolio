@@ -1,1 +1,715 @@
-[]
+[
+  {
+    "id": "f211660c-931c-4c98-8d3f-267622332ae9",
+    "title": "Veloce Fintech Platform",
+    "slug": "veloce-fintech-platform",
+    "category": "logo",
+    "description": "Imported asset from GitHub repository path assets/logos/veloce-fintech-platform.png.",
+    "tools": [
+      "Adobe Illustrator"
+    ],
+    "live_url": null,
+    "featured": true,
+    "sort_order": 1,
+    "created_at": "2026-07-13T18:54:04.565Z",
+    "project_media": [
+      {
+        "id": "29f0c614-eec7-4fbe-b56e-4056cdd7ae68",
+        "project_id": "f211660c-931c-4c98-8d3f-267622332ae9",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/logos/veloce-fintech-platform.png",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "b9c43536-edb3-42fd-8bf8-062e7d3ca474",
+    "title": "Aetheria Cloud Workspace",
+    "slug": "aetheria-cloud-workspace",
+    "category": "website",
+    "description": "Imported asset from GitHub repository path assets/websites/aetheria-cloud-workspace.png.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": true,
+    "sort_order": 2,
+    "created_at": "2026-07-13T18:54:05.401Z",
+    "project_media": [
+      {
+        "id": "0ff96574-7234-4f19-9dcf-9a731789a700",
+        "project_id": "b9c43536-edb3-42fd-8bf8-062e7d3ca474",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/websites/aetheria-cloud-workspace.png",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "a9cf116d-9be2-48bf-bbd6-1aace50011b2",
+    "title": "Helios Smart Commerce",
+    "slug": "helios-smart-commerce",
+    "category": "website",
+    "description": "Imported asset from GitHub repository path assets/websites/helios-smart-commerce.png.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": true,
+    "sort_order": 3,
+    "created_at": "2026-07-13T18:54:05.401Z",
+    "project_media": [
+      {
+        "id": "769e7c67-a1ad-4504-bd9f-c672620c346a",
+        "project_id": "a9cf116d-9be2-48bf-bbd6-1aace50011b2",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/websites/helios-smart-commerce.png",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "4b5bdcfb-6cbf-446d-8970-326858b7e096",
+    "title": "Lumina Particle Symphony",
+    "slug": "lumina-particle-symphony",
+    "category": "website",
+    "description": "Imported asset from GitHub repository path assets/websites/lumina-particle-symphony.png.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": true,
+    "sort_order": 4,
+    "created_at": "2026-07-13T18:54:05.401Z",
+    "project_media": [
+      {
+        "id": "d3b61970-ed5b-4132-b6a3-174aa6d166f8",
+        "project_id": "4b5bdcfb-6cbf-446d-8970-326858b7e096",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/websites/lumina-particle-symphony.png",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "f69802bc-c711-4abd-b26b-6828dc44bd16",
+    "title": "Afriquia Vid",
+    "slug": "afriquia-vid",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Afriquia Vid.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.973Z",
+    "project_media": [
+      {
+        "id": "96441223-1f72-4d4d-81da-1e61ee2e6004",
+        "project_id": "f69802bc-c711-4abd-b26b-6828dc44bd16",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Afriquia Vid.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "fc2711e6-23cc-4564-93aa-64b62c3f5d68",
+    "title": "Aftercan Tek013",
+    "slug": "aftercan-tek013",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Aftercan Tek013.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.973Z",
+    "project_media": [
+      {
+        "id": "c3bf5f69-37c8-4923-b7f8-d1960d2e3d0e",
+        "project_id": "fc2711e6-23cc-4564-93aa-64b62c3f5d68",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Aftercan Tek013.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "92ac6945-e230-4664-8ae0-59c4c38b311e",
+    "title": "Airbnb Vid",
+    "slug": "airbnb-vid",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Airbnb Vid.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.973Z",
+    "project_media": [
+      {
+        "id": "4d9f3b29-c5b2-4dca-9be1-4749fa696201",
+        "project_id": "92ac6945-e230-4664-8ae0-59c4c38b311e",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Airbnb Vid.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "c39b2104-228b-4a7c-949c-10780dc847d2",
+    "title": "Ayoub Vid Nf",
+    "slug": "ayoub-vid-nf",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Ayoub Vid nf.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.973Z",
+    "project_media": [
+      {
+        "id": "e3f4afdb-a1fc-4d37-a668-16ce70d6e78e",
+        "project_id": "c39b2104-228b-4a7c-949c-10780dc847d2",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Ayoub Vid nf.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "6616a435-d79a-4a8f-8a3c-e9dc48e82f42",
+    "title": "Beldi Events",
+    "slug": "beldi-events",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Beldi Events.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.973Z",
+    "project_media": [
+      {
+        "id": "d7722388-ee1c-417c-8666-e16e76a95370",
+        "project_id": "6616a435-d79a-4a8f-8a3c-e9dc48e82f42",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Beldi Events.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "f5245b9f-f305-4f8c-9444-35021628b653",
+    "title": "Biig Ramy 1",
+    "slug": "biig-ramy-1",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Biig ramy 1.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.973Z",
+    "project_media": [
+      {
+        "id": "6f8d756d-42cf-416b-b305-110a92b17c80",
+        "project_id": "f5245b9f-f305-4f8c-9444-35021628b653",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Biig ramy 1.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "352cf0c3-6fd0-4c5c-8b40-7c3c36826365",
+    "title": "Bureaux X2",
+    "slug": "bureaux-x2",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Bureaux x2.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.973Z",
+    "project_media": [
+      {
+        "id": "cb916433-5129-40f7-8626-42091334b4db",
+        "project_id": "352cf0c3-6fd0-4c5c-8b40-7c3c36826365",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Bureaux x2.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "2445bd68-b5d8-4898-8016-23eda2321325",
+    "title": "Casio",
+    "slug": "casio",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Casio.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.973Z",
+    "project_media": [
+      {
+        "id": "92c88dd8-ce4b-4f83-9381-2e2e8013cb02",
+        "project_id": "2445bd68-b5d8-4898-8016-23eda2321325",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Casio.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "7fe062f7-a6f4-462d-b592-c737e7e2ddab",
+    "title": "Dacia Vid",
+    "slug": "dacia-vid",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Dacia Vid.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.973Z",
+    "project_media": [
+      {
+        "id": "437fd7b6-88c9-407f-88cb-af64033731fe",
+        "project_id": "7fe062f7-a6f4-462d-b592-c737e7e2ddab",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Dacia Vid.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "a561bc26-3bdb-408a-b427-c6773a29a8a5",
+    "title": "Dan Charkiat X2",
+    "slug": "dan-charkiat-x2",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Dan Charkiat x2.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.974Z",
+    "project_media": [
+      {
+        "id": "e2679e1d-a5c9-4713-8dba-82f393807596",
+        "project_id": "a561bc26-3bdb-408a-b427-c6773a29a8a5",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Dan Charkiat x2.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "98c19f0c-1e97-4755-9f62-6f8e94ecb1ec",
+    "title": "Esca X2",
+    "slug": "esca-x2",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Esca x2.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.974Z",
+    "project_media": [
+      {
+        "id": "54d08bf4-543c-40ab-9cf5-211e81630c3c",
+        "project_id": "98c19f0c-1e97-4755-9f62-6f8e94ecb1ec",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Esca x2.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "25b9c679-7570-45d3-a0f6-b36b5ad287f7",
+    "title": "Fayou Compil",
+    "slug": "fayou-compil",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Fayou Compil.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.974Z",
+    "project_media": [
+      {
+        "id": "da9eef9a-f1dd-4b2c-b7ab-81d565746bee",
+        "project_id": "25b9c679-7570-45d3-a0f6-b36b5ad287f7",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Fayou Compil.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "fbc4a83c-ad0a-4675-8f4a-9532944f8654",
+    "title": "Fayou Randonn",
+    "slug": "fayou-randonn",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Fayou Randonn.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.974Z",
+    "project_media": [
+      {
+        "id": "e440978d-ed6b-449d-bb8c-28f37d106607",
+        "project_id": "fbc4a83c-ad0a-4675-8f4a-9532944f8654",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Fayou Randonn.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "7e705f13-32b6-4e1d-a08f-9db496a5c55c",
+    "title": "Hindi Vid",
+    "slug": "hindi-vid",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Hindi Vid.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.974Z",
+    "project_media": [
+      {
+        "id": "79234e2f-e21e-4ad9-a4f4-ec27668baf34",
+        "project_id": "7e705f13-32b6-4e1d-a08f-9db496a5c55c",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Hindi Vid.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "fb2d077a-4eca-46aa-ba48-f862da0441ad",
+    "title": "Porta P Vid",
+    "slug": "porta-p-vid",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Porta P Vid.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.975Z",
+    "project_media": [
+      {
+        "id": "5351b21b-60af-4022-960d-f082a3feea21",
+        "project_id": "fb2d077a-4eca-46aa-ba48-f862da0441ad",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Porta P Vid.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "f6b769d0-1513-4096-a60b-5fa8a3d998f7",
+    "title": "Shareco",
+    "slug": "shareco",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Shareco.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.976Z",
+    "project_media": [
+      {
+        "id": "fa766425-16a2-41e1-b238-14da501a67e3",
+        "project_id": "f6b769d0-1513-4096-a60b-5fa8a3d998f7",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Shareco.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "6b756e55-4394-4e31-88ff-12ec4c4079a8",
+    "title": "Spa Video 2 X2",
+    "slug": "spa-video-2-x2",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Spa Video 2 x2.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.976Z",
+    "project_media": [
+      {
+        "id": "1150beeb-95b6-4bf4-b5fb-a957cd257b5b",
+        "project_id": "6b756e55-4394-4e31-88ff-12ec4c4079a8",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Spa Video 2 x2.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "9a55cb42-2b2a-4381-a4e6-1f556e72e318",
+    "title": "Spa Video 1 X2",
+    "slug": "spa-video-1-x2",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Spa video 1 x2.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.976Z",
+    "project_media": [
+      {
+        "id": "a7f73c3f-e37f-4a2f-a0b9-507d0e44f6e1",
+        "project_id": "9a55cb42-2b2a-4381-a4e6-1f556e72e318",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Spa video 1 x2.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "624f4474-3dff-424a-829c-e7e26b3fab5a",
+    "title": "Tabaq Compil",
+    "slug": "tabaq-compil",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Tabaq Compil.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.976Z",
+    "project_media": [
+      {
+        "id": "bab0c6dc-16d3-448a-b753-692e75773dea",
+        "project_id": "624f4474-3dff-424a-829c-e7e26b3fab5a",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Tabaq Compil.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "ccd4c6fa-74a7-4bd3-987d-20d2f8f0abcf",
+    "title": "Tabaq Open",
+    "slug": "tabaq-open",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Tabaq Open.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.976Z",
+    "project_media": [
+      {
+        "id": "4fbbd50f-45e4-4f61-9677-c7cae0be0d8b",
+        "project_id": "ccd4c6fa-74a7-4bd3-987d-20d2f8f0abcf",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Tabaq Open.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "d4b14544-f9af-4243-a2aa-232122d6a1b6",
+    "title": "Thermo",
+    "slug": "thermo",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Thermo.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.976Z",
+    "project_media": [
+      {
+        "id": "768d4165-c021-4330-8cf5-af095eede9f1",
+        "project_id": "d4b14544-f9af-4243-a2aa-232122d6a1b6",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Thermo.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "2b7eedda-3b12-41b7-9a73-5913fc6c6b47",
+    "title": "Total Energies",
+    "slug": "total-energies",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Total Energies.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.976Z",
+    "project_media": [
+      {
+        "id": "1d001230-296a-4d4d-8827-0ba41c681417",
+        "project_id": "2b7eedda-3b12-41b7-9a73-5913fc6c6b47",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Total Energies.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "14f8d1a1-01d5-4475-9ed6-f9a77fc4b5d4",
+    "title": "Trendy Para",
+    "slug": "trendy-para",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Trendy para.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.976Z",
+    "project_media": [
+      {
+        "id": "dcec58f2-bdbb-4f66-878c-a9c38e8117ae",
+        "project_id": "14f8d1a1-01d5-4475-9ed6-f9a77fc4b5d4",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Trendy para.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "bc9f51a5-1b84-4264-b36a-60ffd9e73587",
+    "title": "Webook 2 Fes",
+    "slug": "webook-2-fes",
+    "category": "website",
+    "description": "Imported asset from GitHub repository path assets/videos/Webook 2 fes.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.976Z",
+    "project_media": [
+      {
+        "id": "7831bd94-771a-4ed6-bcf1-a13af0405a22",
+        "project_id": "bc9f51a5-1b84-4264-b36a-60ffd9e73587",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Webook 2 fes.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "5dc2035f-bfd7-4607-b2b6-9613104ce0b0",
+    "title": "Weeding 1",
+    "slug": "weeding-1",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Weeding 1.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.976Z",
+    "project_media": [
+      {
+        "id": "30738c19-60da-477f-9545-154acf579871",
+        "project_id": "5dc2035f-bfd7-4607-b2b6-9613104ce0b0",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Weeding 1.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "527e3443-e47e-48f1-babe-655639c27d89",
+    "title": "Ecotech Vid",
+    "slug": "ecotech-vid",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/ecotech Vid.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.976Z",
+    "project_media": [
+      {
+        "id": "2167455f-e078-436f-b049-cbf4fdbd991f",
+        "project_id": "527e3443-e47e-48f1-babe-655639c27d89",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/ecotech Vid.mp4",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "df1bfe26-c369-449f-b11f-2dd47da3d622",
+    "title": "Taekwondo",
+    "slug": "taekwondo",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/taekwondo.mp4.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-13T18:54:13.976Z",
+    "project_media": [
+      {
+        "id": "b7c8552f-c975-4906-82d7-2a2e6a9989f1",
+        "project_id": "df1bfe26-c369-449f-b11f-2dd47da3d622",
+        "media_type": "video",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/taekwondo.mp4",
+        "position": 0
+      }
+    ]
+  }
+]
