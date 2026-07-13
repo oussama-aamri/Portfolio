@@ -12,9 +12,13 @@ if (!supabaseUrl || !supabaseAnonKey) {
 export const supabase = createClient<Database>(supabaseUrl, supabaseAnonKey);
 
 /**
- * Helper to get the public URL of a media file in the portfolio-media bucket.
+ * Helper to get the public URL of a media file.
+ * Returns the path directly if it is already an absolute URL (like GitHub raw CDN links).
  */
 export function getMediaPublicUrl(storagePath: string): string {
+  if (storagePath && (storagePath.startsWith('http://') || storagePath.startsWith('https://'))) {
+    return storagePath;
+  }
   if (!supabaseUrl) return '';
   // Format: [supabaseUrl]/storage/v1/object/public/portfolio-media/[storagePath]
   return `${supabaseUrl}/storage/v1/object/public/portfolio-media/${storagePath}`;

@@ -1,26 +1,46 @@
-import { createClient } from '@supabase/supabase-js';
 import * as dotenv from 'dotenv';
 import * as path from 'path';
+import * as fs from 'fs';
+import { randomUUID } from 'crypto';
 
 // Load env variables from .env.local or .env
 dotenv.config({ path: path.resolve(process.cwd(), '.env.local') });
 dotenv.config();
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
 const githubToken = process.env.GITHUB_TOKEN || '';
-
-// Configurable repo and path - can be set in env or passed as args
-const githubRepo = process.env.GITHUB_REPO || 'osama/Portfolio'; // Fallback
+const githubRepo = process.env.GITHUB_REPO || '';
 const githubPaths = (process.env.GITHUB_PATHS || 'assets/logos,assets/flyers,assets/instagram').split(',');
+const githubBranch = process.env.GITHUB_BRANCH || 'main';
 
-if (!supabaseUrl || !supabaseServiceKey) {
-  console.error('ERROR: NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY must be set in your environment.');
+if (!githubRepo) {
+  console.error('ERROR: GITHUB_REPO must be set in your environment (e.g. owner/repo).');
   process.exit(1);
 }
 
-// Initialize Supabase Admin Client
-const supabase = createClient(supabaseUrl, supabaseServiceKey);
+const jsonPath = path.resolve(process.cwd(), 'src/data/projects.json');
+
+// Interface declarations
+interface ProjectMedia {
+  id: string;
+  project_id: string;
+  media_type: 'image' | 'video';
+  storage_path: string;
+  position: number;
+}
+
+interface ProjectWithMedia {
+  id: string;
+  title: string;
+  slug: string;
+  category: 'logo' | 'flyer' | 'instagram' | 'website' | 'video';
+  description: string;
+  tools: string[];
+  live_url: string | null;
+  featured: boolean;
+  sort_order: number;
+  created_at: string;
+  project_media: ProjectMedia[];
+}
 
 interface GitHubFile {
   name: string;
@@ -71,7 +91,7 @@ function getMediaType(fileName: string): 'image' | 'video' {
 }
 
 async function fetchGitHubDirectory(repo: string, dirPath: string): Promise<GitHubFile[]> {
-  const url = `https://api.github.com/repos/${repo}/contents/${dirPath}`;
+  const url = `https://api.github.com/repos/${repo}/contents/${dirPath}?ref=${githubBranch}`;
   const headers: HeadersInit = {
     Accept: 'application/vnd.github.v3+json',
   };
@@ -92,18 +112,25 @@ async function fetchGitHubDirectory(repo: string, dirPath: string): Promise<GitH
   return Array.isArray(data) ? data : [data];
 }
 
-async function downloadFileAsBuffer(downloadUrl: string): Promise<Buffer> {
-  const res = await fetch(downloadUrl);
-  if (!res.ok) {
-    throw new Error(`Failed to download file from ${downloadUrl}: ${res.statusText}`);
-  }
-  const arrayBuffer = await res.arrayBuffer();
-  return Buffer.from(arrayBuffer);
-}
-
 async function importAssets() {
-  console.log(`Starting GitHub Import from repo: "${githubRepo}"...`);
+  console.log(`Starting GitHub Import from repo: "${githubRepo}" [branch: ${githubBranch}]...`);
   
+  // Load existing projects from JSON
+  let projects: ProjectWithMedia[] = [];
+  if (fs.existsSync(jsonPath)) {
+    try {
+      const dataStr = fs.readFileSync(jsonPath, 'utf8');
+      projects = JSON.parse(dataStr);
+      console.log(`Loaded ${projects.length} existing project(s) from local projects.json`);
+    } catch (e) {
+      console.warn('Could not read existing projects.json, starting fresh:', e);
+      projects = [];
+    }
+  }
+
+  let projectsCreated = 0;
+  let mediaAddedCount = 0;
+
   for (const dirPath of githubPaths) {
     const trimmedPath = dirPath.trim();
     if (!trimmedPath) continue;
@@ -133,121 +160,49 @@ async function importAssets() {
 
         console.log(`Processing asset: "${file.name}" -> Category: "${category}", Slug: "${slug}"`);
 
-        // 1. Check/Insert placeholder project
-        let projectId: string;
+        // Check if project exists in local array
+        let project = projects.find(p => p.slug === slug);
         
-        const { data: existingProject, error: fetchError } = await supabase
-          .from('projects')
-          .select('id')
-          .eq('slug', slug)
-          .single();
-          
-        if (fetchError && fetchError.code !== 'PGRST116') {
-          console.error(`Error querying projects for slug "${slug}":`, fetchError);
-          continue;
-        }
-
-        if (existingProject) {
-          projectId = existingProject.id;
-          console.log(`  Project with slug "${slug}" already exists (ID: ${projectId}).`);
+        if (project) {
+          console.log(`  Project with slug "${slug}" already exists (ID: ${project.id}).`);
         } else {
-          console.log(`  Creating placeholder project: "${title}"`);
-          const { data: newProject, error: insertError } = await supabase
-            .from('projects')
-            .insert({
-              title,
-              slug,
-              category,
-              description: `Imported asset from GitHub repository path ${file.path}.`,
-              tools: [category === 'logo' || category === 'flyer' ? 'Adobe Illustrator' : 'Figma'],
-              featured: false,
-              sort_order: 0,
-            })
-            .select('id')
-            .single();
-
-          if (insertError || !newProject) {
-            console.error(`  Error creating project "${title}":`, insertError);
-            continue;
-          }
-          projectId = newProject.id;
-          console.log(`  Created project ID: ${projectId}`);
+          console.log(`  Creating new project object: "${title}"`);
+          project = {
+            id: randomUUID(),
+            title,
+            slug,
+            category,
+            description: `Imported asset from GitHub repository path ${file.path}.`,
+            tools: [category === 'logo' || category === 'flyer' ? 'Adobe Illustrator' : 'Figma'],
+            live_url: null,
+            featured: false,
+            sort_order: 0,
+            created_at: new Date().toISOString(),
+            project_media: [],
+          };
+          projects.push(project);
+          projectsCreated++;
         }
 
-        // 2. Download raw file content from GitHub
-        console.log(`  Downloading file content...`);
-        const fileBuffer = await downloadFileAsBuffer(file.download_url!);
+        // Formulate the raw GitHub CDN URL for this asset
+        const rawUrl = `https://raw.githubusercontent.com/${githubRepo}/${githubBranch}/${file.path}`;
 
-        // 3. Upload to Supabase Storage bucket "portfolio-media"
-        // Storage path layout: category/slug-uuid.ext
-        const storagePath = `${category}/${slug}${ext}`;
-        console.log(`  Uploading to storage bucket "portfolio-media" as "${storagePath}"...`);
-        
-        // Infer correct content-type
-        let contentType = 'image/png';
-        if (ext === '.jpg' || ext === '.jpeg') contentType = 'image/jpeg';
-        else if (ext === '.gif') contentType = 'image/gif';
-        else if (ext === '.webp') contentType = 'image/webp';
-        else if (ext === '.svg') contentType = 'image/svg+xml';
-        else if (ext === '.mp4') contentType = 'video/mp4';
-        else if (ext === '.mov') contentType = 'video/quicktime';
-        else if (ext === '.webm') contentType = 'video/webm';
+        // Check if media is already linked
+        const mediaExists = project.project_media.some(m => m.storage_path === rawUrl);
 
-        const { data: uploadData, error: uploadError } = await supabase.storage
-          .from('portfolio-media')
-          .upload(storagePath, fileBuffer, {
-            contentType,
-            upsert: true,
+        if (mediaExists) {
+          console.log(`  Media entry already exists for project ID ${project.id} and path "${rawUrl}".`);
+        } else {
+          const position = project.project_media.length;
+          project.project_media.push({
+            id: randomUUID(),
+            project_id: project.id,
+            media_type: mediaType,
+            storage_path: rawUrl,
+            position,
           });
-
-        if (uploadError) {
-          console.error(`  Failed to upload to Supabase storage:`, uploadError);
-          continue;
-        }
-
-        console.log(`  Uploaded successfully:`, uploadData.path);
-
-        // 4. Create project_media record linked to this project
-        // Check if media already linked
-        const { data: existingMedia, error: mediaQueryError } = await supabase
-          .from('project_media')
-          .select('id')
-          .eq('project_id', projectId)
-          .eq('storage_path', storagePath)
-          .single();
-
-        if (mediaQueryError && mediaQueryError.code !== 'PGRST116') {
-          console.error(`  Error checking existing media:`, mediaQueryError);
-          continue;
-        }
-
-        if (existingMedia) {
-          console.log(`  Media entry already exists for project ID ${projectId} and storage path "${storagePath}".`);
-        } else {
-          // Get next position index
-          const { data: posData } = await supabase
-            .from('project_media')
-            .select('position')
-            .eq('project_id', projectId)
-            .order('position', { ascending: false })
-            .limit(1);
-          
-          const position = posData && posData.length > 0 ? posData[0].position + 1 : 0;
-
-          const { error: mediaInsertError } = await supabase
-            .from('project_media')
-            .insert({
-              project_id: projectId,
-              media_type: mediaType,
-              storage_path: storagePath,
-              position,
-            });
-
-          if (mediaInsertError) {
-            console.error(`  Error linking project media:`, mediaInsertError);
-          } else {
-            console.log(`  Linked media to project successfully (Position: ${position}).`);
-          }
+          mediaAddedCount++;
+          console.log(`  Linked media to project successfully (Position: ${position}).`);
         }
       }
 
@@ -255,8 +210,14 @@ async function importAssets() {
       console.error(`Failed to process directory "${dirPath}":`, err.message);
     }
   }
-  
+
+  // Write updated data back to JSON
+  // Ensure parent directory exists
+  fs.mkdirSync(path.dirname(jsonPath), { recursive: true });
+  fs.writeFileSync(jsonPath, JSON.stringify(projects, null, 2), 'utf8');
+
   console.log('\nGitHub asset import process complete.');
+  console.log(`Summary: Created ${projectsCreated} projects, linked ${mediaAddedCount} new media assets.`);
 }
 
 importAssets().catch(err => {

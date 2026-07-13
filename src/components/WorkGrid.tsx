@@ -34,18 +34,19 @@ export default function WorkGrid({ initialProjects }: WorkGridProps) {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`relative px-4 py-2.5 text-sm font-semibold tracking-wide whitespace-nowrap transition-colors duration-200 hover:text-foreground ${
-                isActive ? 'text-brand' : 'text-muted-foreground'
+              className={`relative px-4 py-2.5 font-mono text-[10px] font-medium tracking-widest whitespace-nowrap transition-colors duration-200 hover:text-foreground uppercase ${
+                isActive ? 'text-foreground font-semibold' : 'text-muted-foreground'
               }`}
             >
               {tab.label}
               {isActive && (
-                <span className="absolute bottom-[-9px] left-0 h-0.5 w-full bg-brand animate-fade-in" />
+                <span className="absolute bottom-[-9px] left-0 h-[1.5px] w-full bg-brand shadow-[0_0_8px_var(--brand)] animate-fade-in" />
               )}
             </button>
           );
         })}
       </div>
+
 
       {/* Grid Container */}
       {filteredProjects.length > 0 ? (

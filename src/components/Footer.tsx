@@ -14,13 +14,13 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="w-full border-t border-border bg-muted/30 py-8 transition-colors duration-200">
+    <footer className="w-full border-t border-border bg-[#08080a] py-8 transition-colors duration-200">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 md:flex-row">
-        <p className="font-body text-sm text-muted-foreground">
+        <p className="font-mono text-[10px] tracking-widest uppercase text-muted-foreground">
           &copy; {currentYear} Alex Morgan. All rights reserved.
         </p>
         
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           {socialLinks.map((link) => {
             const Icon = link.icon;
             return (
@@ -29,10 +29,10 @@ export default function Footer() {
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background text-muted-foreground hover:text-foreground hover:border-muted-foreground transition-all duration-200"
+                className="flex h-8 w-8 items-center justify-center rounded-full border border-border bg-[#0f0f12] text-muted-foreground hover:text-foreground hover:border-brand/40 hover:bg-brand/5 hover:shadow-[0_0_10px_rgba(139,92,246,0.15)] transition-all duration-200"
                 aria-label={link.name}
               >
-                <Icon className="h-4 w-4" />
+                <Icon className="h-3.5 w-3.5" />
               </a>
             );
           })}
@@ -41,3 +41,4 @@ export default function Footer() {
     </footer>
   );
 }
+

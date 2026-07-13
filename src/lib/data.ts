@@ -1,68 +1,51 @@
-import { supabase } from './supabase';
 import { ProjectWithMedia } from '@/types/database.types';
+import localProjects from '@/data/projects.json';
+
+// Cast the imported JSON to the appropriate typescript model
+const projects = localProjects as ProjectWithMedia[];
 
 export async function getFeaturedProjects(): Promise<ProjectWithMedia[]> {
   try {
-    const { data, error } = await supabase
-      .from('projects')
-      .select('*, project_media(*)')
-      .eq('featured', true)
-      .order('sort_order', { ascending: true });
-
-    if (error) {
-      console.error('Error fetching featured projects:', error);
-      return [];
-    }
-
-    return (data as ProjectWithMedia[]) || [];
+    return projects
+      .filter(p => p.featured)
+      .sort((a, b) => a.sort_order - b.sort_order);
   } catch (err) {
-    console.error('Database connection error in getFeaturedProjects:', err);
+    console.error('Error fetching featured projects:', err);
     return [];
   }
 }
 
 export async function getAllProjects(): Promise<ProjectWithMedia[]> {
   try {
-    const { data, error } = await supabase
-      .from('projects')
-      .select('*, project_media(*)')
-      .order('sort_order', { ascending: true })
-      .order('created_at', { ascending: false });
-
-    if (error) {
-      console.error('Error fetching projects:', error);
-      return [];
-    }
-
-    return (data as ProjectWithMedia[]) || [];
+    return [...projects].sort((a, b) => {
+      // Sort by sort_order ascending
+      if (a.sort_order !== b.sort_order) {
+        return a.sort_order - b.sort_order;
+      }
+      // Fallback to created_at date descending
+      return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+    });
   } catch (err) {
-    console.error('Database connection error in getAllProjects:', err);
+    console.error('Error fetching all projects:', err);
     return [];
   }
 }
 
 export async function getProjectBySlug(slug: string): Promise<ProjectWithMedia | null> {
   try {
-    const { data, error } = await supabase
-      .from('projects')
-      .select('*, project_media(*)')
-      .eq('slug', slug)
-      .single();
+    const project = projects.find(p => p.slug === slug);
+    if (!project) return null;
 
-    if (error) {
-      console.error(`Error fetching project by slug "${slug}":`, error);
-      return null;
+    // Create a deep copy to avoid mutations affecting cached module state
+    const projectCopy = JSON.parse(JSON.stringify(project)) as ProjectWithMedia;
+
+    if (projectCopy.project_media && Array.isArray(projectCopy.project_media)) {
+      projectCopy.project_media.sort((a, b) => a.position - b.position);
     }
 
-    const projectData = data as unknown as ProjectWithMedia;
-    // Sort project media by position
-    if (projectData && projectData.project_media && Array.isArray(projectData.project_media)) {
-      projectData.project_media.sort((a: { position: number }, b: { position: number }) => a.position - b.position);
-    }
-
-    return projectData || null;
+    return projectCopy;
   } catch (err) {
-    console.error(`Database connection error in getProjectBySlug for "${slug}":`, err);
+    console.error(`Error fetching project by slug "${slug}":`, err);
     return null;
   }
 }

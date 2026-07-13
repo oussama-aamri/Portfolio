@@ -1,8 +1,9 @@
 import Link from 'next/link';
-import { ArrowRight, Sparkles, FolderKanban } from 'lucide-react';
+import { ArrowRight, FolderKanban } from 'lucide-react';
 import { getFeaturedProjects } from '@/lib/data';
-import ProjectCard from '@/components/ProjectCard';
 import { ProjectWithMedia } from '@/types/database.types';
+import ClientLogoSlider from '@/components/ClientLogoSlider';
+import FeaturedShowcaseSlider from '@/components/FeaturedShowcaseSlider';
 
 // Premium placeholder projects to show before DB import is run
 const FALLBACK_FEATURED_PROJECTS: ProjectWithMedia[] = [
@@ -81,83 +82,164 @@ export default async function Home() {
   const featuredProjects = hasDbProjects ? supabaseProjects : FALLBACK_FEATURED_PROJECTS;
 
   return (
-    <div className="flex flex-col gap-20 py-12 md:py-24">
+    <div className="flex flex-col gap-24 py-12 md:py-20 relative overflow-hidden">
       {/* 1. Hero Section */}
-      <section className="mx-auto max-w-4xl px-6 text-center md:text-left">
-        <div className="inline-flex items-center gap-2 rounded-full border border-brand/20 bg-brand/5 px-4 py-1.5 text-xs font-semibold text-brand tracking-wide mb-6 animate-pulse">
-          <Sparkles className="h-3.5 w-3.5" />
-          Available for design & development contracts
-        </div>
+      <section className="mx-auto max-w-6xl w-full px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center z-10">
         
-        <h1 className="font-heading text-4xl sm:text-6xl font-extrabold tracking-tight text-foreground leading-[1.1] mb-6">
-          Crafting digital <br />
-          <span className="text-brand">masterpieces</span> <br />
-          with code & design
-        </h1>
-        
-        <p className="font-body text-lg sm:text-xl text-muted-foreground max-w-2xl leading-relaxed mb-10">
-          I am Alex Morgan, a creative engineer specializing in building high-fidelity interactive interfaces, custom branding, and responsive web products with extreme visual detail.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-          <Link
-            href="/work"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-brand px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-brand/25 transition-all duration-200 hover:bg-brand-dark hover:-translate-y-0.5 active:translate-y-0"
-          >
-            View My Work
-            <ArrowRight className="h-4 w-4" />
-          </Link>
+        {/* Left Side: Value Prop */}
+        <div className="lg:col-span-7 flex flex-col text-left">
+          <div className="inline-flex self-start items-center gap-2 rounded-full border border-border bg-[#0f0f12] px-4 py-1.5 text-[10px] font-semibold font-mono text-muted-foreground tracking-wider uppercase mb-6">
+            <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_8px_#10b981] animate-pulse" />
+            Available for contracts & full-time roles
+          </div>
           
-          <Link
-            href="/contact"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-background px-8 py-3.5 text-sm font-semibold text-foreground hover:bg-muted/50 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
-          >
-            Let&apos;s Connect
-          </Link>
+          <h1 className="font-heading text-4xl sm:text-6xl font-extrabold tracking-tight text-foreground leading-[1.1] mb-6">
+            Delivering digital interfaces from <br />
+            <span className="bg-[linear-gradient(98deg,#f59e0b_1.35%,#84cc16_18.48%,#10b981_38.35%,#0ea5e9_58.63%,#8b5cf6_79.7%,#ec4899_100%)] bg-clip-text text-transparent will-change-transform font-black">
+              dev to prod
+            </span>.
+          </h1>
+          
+          <p className="font-body text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed mb-10">
+            I am Alex Morgan, a creative software engineer building high-performance interactive interfaces, custom design systems, and developer-centric web products with extreme visual detail.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <Link
+              href="/work"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-white hover:bg-neutral-100 px-8 py-3.5 text-xs font-semibold font-mono text-black shadow-lg shadow-white/5 hover:shadow-brand/20 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 uppercase tracking-widest"
+            >
+              Explore Work
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-border bg-[#0f0f12] px-8 py-3.5 text-xs font-semibold font-mono text-foreground hover:bg-[#141418] hover:border-brand/40 hover:shadow-[0_0_15px_rgba(139,92,246,0.15)] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 uppercase tracking-widest"
+            >
+              Let&apos;s Connect
+            </Link>
+          </div>
+        </div>
+
+        {/* Right Side: Interactive Terminal Window */}
+        <div className="lg:col-span-5 w-full max-w-md mx-auto lg:mx-0">
+          <div className="w-full rounded-xl border border-border bg-[#0a0a0d] shadow-2xl overflow-hidden flex flex-col font-mono text-xs">
+            {/* Terminal Header */}
+            <div className="h-10 bg-[#0f0f14] border-b border-border/80 px-4 flex items-center justify-between">
+              {/* Window Controls */}
+              <div className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
+              </div>
+              {/* Window Title */}
+              <span className="text-muted-foreground/60 text-[10px] select-none">alex@morgan: ~</span>
+              {/* Copy placeholder */}
+              <div className="w-10" />
+            </div>
+            
+            {/* Terminal Body */}
+            <div className="p-5 flex flex-col gap-4 text-[11px] leading-relaxed overflow-x-auto select-text selection:bg-brand/20">
+              <div>
+                <span className="text-emerald-400">alex@morgan</span>
+                <span className="text-white">:</span>
+                <span className="text-violet-400">~</span>
+                <span className="text-white">$ curl -s https://api.alexmorgan.dev/profile</span>
+              </div>
+              
+              <div className="text-muted-foreground">
+                <span className="text-white">{`{`}</span>
+                <div className="pl-4">
+                  <span className="text-amber-400">&quot;name&quot;</span><span className="text-white">:</span> <span className="text-emerald-300">&quot;Alex Morgan&quot;</span><span className="text-white">,</span>
+                </div>
+                <div className="pl-4">
+                  <span className="text-amber-400">&quot;role&quot;</span><span className="text-white">:</span> <span className="text-emerald-300">&quot;Full-Stack Creative Engineer&quot;</span><span className="text-white">,</span>
+                </div>
+                <div className="pl-4">
+                  <span className="text-amber-400">&quot;status&quot;</span><span className="text-white">:</span> <span className="text-emerald-300">&quot;active_for_contracts&quot;</span><span className="text-white">,</span>
+                </div>
+                <div className="pl-4">
+                  <span className="text-amber-400">&quot;stack&quot;</span><span className="text-white">:</span> <span className="text-white">[</span>
+                  <div className="pl-4">
+                    <span className="text-emerald-300">&quot;React/Next.js&quot;</span><span className="text-white">,</span>
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-emerald-300">&quot;TypeScript&quot;</span><span className="text-white">,</span>
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-emerald-300">&quot;Tailwind CSS&quot;</span><span className="text-white">,</span>
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-emerald-300">&quot;Supabase/DB&quot;</span>
+                  </div>
+                  <span className="text-white">]</span><span className="text-white">,</span>
+                </div>
+                <div className="pl-4">
+                  <span className="text-amber-400">&quot;design_focus&quot;</span><span className="text-white">:</span> <span className="text-white">[</span>
+                  <div className="pl-4">
+                    <span className="text-emerald-300">&quot;UI/UX Systems&quot;</span><span className="text-white">,</span>
+                  </div>
+                  <div className="pl-4">
+                    <span className="text-emerald-300">&quot;WebGL/GLSL Shaders&quot;</span>
+                  </div>
+                  <span className="text-white">]</span>
+                </div>
+                <span className="text-white">{`}`}</span>
+              </div>
+              
+              <div className="flex items-center gap-1">
+                <span className="text-emerald-400">alex@morgan</span>
+                <span className="text-white">:</span>
+                <span className="text-violet-400">~</span>
+                <span className="text-white">$</span>
+                <span className="w-1.5 h-3 bg-brand animate-pulse" />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
+      {/* Client Logos Slider */}
+      <ClientLogoSlider />
+
       {/* 2. Featured Work Section */}
-      <section className="mx-auto w-full max-w-6xl px-6">
-        <div className="flex items-end justify-between border-b border-border pb-6 mb-10">
+      <section className="mx-auto w-full max-w-6xl px-6 z-10">
+        <div className="flex items-end justify-between border-b border-border pb-4 mb-10">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand/10 text-brand">
-              <FolderKanban className="h-5 w-5" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-[#0f0f12] text-brand">
+              <FolderKanban className="h-4.5 w-4.5" />
             </div>
             <div>
-              <span className="text-xs font-bold text-brand uppercase tracking-widest">01 // Selected Works</span>
-              <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-foreground">Featured Work</h2>
+              <span className="font-mono text-[9px] font-bold text-brand uppercase tracking-widest">02 // SELECTED WORK</span>
+              <h2 className="font-heading text-xl sm:text-2xl font-bold text-foreground mt-0.5">Featured Showcase</h2>
             </div>
           </div>
           
           <Link 
             href="/work"
-            className="group hidden sm:inline-flex items-center gap-1.5 text-sm font-bold text-brand hover:text-brand-dark transition-colors duration-200"
+            className="group hidden sm:inline-flex items-center gap-1.5 font-mono text-[10px] font-semibold text-brand hover:text-brand-light transition-colors duration-200 uppercase tracking-wider"
           >
             Explore all projects
-            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-1" />
           </Link>
         </div>
 
         {/* Informative banner if viewing placeholder items */}
         {!hasDbProjects && (
-          <div className="mb-8 rounded-xl border border-dashed border-border bg-muted/20 p-4 text-center text-sm text-muted-foreground">
-            Showing design templates. Once you add your Supabase credentials in `.env.local` and run your GitHub import script, your live portfolio projects will display here.
+          <div className="mb-8 rounded-xl border border-dashed border-border bg-[#0f0f12]/50 p-4 text-center font-mono text-[11px] text-muted-foreground">
+            <span className="text-brand">[info]</span> Showing design templates. Once you add your GitHub configurations and run sync, live database items will automatically render here.
           </div>
         )}
 
-        {/* Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuredProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
+        {/* Responsive Horizontal Slider of 9:16 Cards */}
+        <FeaturedShowcaseSlider featuredProjects={featuredProjects} />
 
         {/* Mobile explore link */}
         <div className="mt-10 text-center sm:hidden">
           <Link 
             href="/work"
-            className="inline-flex items-center justify-center gap-1.5 rounded-xl border border-border bg-background w-full py-3.5 text-sm font-semibold text-brand"
+            className="inline-flex items-center justify-center gap-1.5 rounded-full border border-border bg-[#0f0f12] w-full py-3.5 font-mono text-[11px] font-semibold text-brand hover:bg-[#141418] uppercase tracking-wider"
           >
             Explore all projects
             <ArrowRight className="h-4 w-4" />

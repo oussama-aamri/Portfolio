@@ -106,18 +106,18 @@ export default async function WorkPage() {
   return (
     <div className="mx-auto w-full max-w-6xl px-6 py-12 md:py-20 flex flex-col gap-10">
       <div>
-        <span className="text-xs font-bold text-brand uppercase tracking-widest">02 // Portfolio Hub</span>
-        <h1 className="font-heading text-3xl sm:text-5xl font-extrabold text-foreground mt-2 mb-4">
+        <span className="font-mono text-[9px] font-bold text-brand tracking-widest uppercase">02 // PORTFOLIO HUB</span>
+        <h1 className="font-heading text-3xl sm:text-5xl font-extrabold text-foreground mt-1 mb-4">
           All Selected Work
         </h1>
-        <p className="font-body text-base text-muted-foreground max-w-xl">
+        <p className="font-body text-base text-muted-foreground max-w-xl leading-relaxed">
           Browse through my design and engineering projects, filtered by category. Click on any project thumbnail to view its full details and case studies.
         </p>
       </div>
 
       {!hasDbProjects && (
-        <div className="rounded-xl border border-dashed border-border bg-muted/20 p-4 text-center text-sm text-muted-foreground">
-          Showing fallback design assets. Once your Supabase tables are hydrated, your actual database items will dynamically replace these.
+        <div className="rounded-xl border border-dashed border-border bg-[#0f0f12]/50 p-4 text-center font-mono text-[11px] text-muted-foreground">
+          <span className="text-brand">[info]</span> Showing fallback design assets. Once you run your GitHub import script, your actual projects will dynamically replace these.
         </div>
       )}
 
