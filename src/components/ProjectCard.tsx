@@ -1,3 +1,6 @@
+'use client';
+
+import { useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ProjectWithMedia } from '@/types/database.types';
@@ -19,6 +22,22 @@ export const CATEGORY_LABELS: Record<string, string> = {
 
 export default function ProjectCard({ project, variant }: ProjectCardProps) {
   const { title, slug, category, tools, project_media } = project;
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleMouseEnter = () => {
+    if (videoRef.current) {
+      videoRef.current.play().catch((err) => {
+        console.debug("Video play interrupted:", err);
+      });
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  };
   
   // Find primary image/video (position 0 or first item)
   const primaryMedia = project_media && project_media.length > 0 
@@ -49,6 +68,8 @@ export default function ProjectCard({ project, variant }: ProjectCardProps) {
     return (
       <Link 
         href={`/work/${slug}`}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         className="group block relative w-full aspect-[9/16] overflow-hidden rounded-xl border border-border bg-[#0f0f12] transition-all duration-300 hover:border-brand/40 hover:shadow-[0_12px_30px_-10px_rgba(139,92,246,0.2)]"
       >
         {/* Media background wrapper */}
@@ -56,8 +77,8 @@ export default function ProjectCard({ project, variant }: ProjectCardProps) {
           {publicUrl ? (
             isVideo ? (
               <video
+                ref={videoRef}
                 src={publicUrl}
-                autoPlay
                 muted
                 loop
                 playsInline
@@ -132,6 +153,8 @@ export default function ProjectCard({ project, variant }: ProjectCardProps) {
   return (
     <Link 
       href={`/work/${slug}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       className="group block flex flex-col overflow-hidden rounded-xl border border-border bg-[#0f0f12] transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-[0_12px_30px_-10px_rgba(139,92,246,0.15)]"
     >
       {/* Thumbnail Wrapper */}
@@ -140,8 +163,8 @@ export default function ProjectCard({ project, variant }: ProjectCardProps) {
           isVideo ? (
             <div className="relative h-full w-full">
               <video
+                ref={videoRef}
                 src={publicUrl}
-                autoPlay
                 muted
                 loop
                 playsInline
