@@ -74,11 +74,12 @@ function cleanTitle(slug: string): string {
 
 function inferCategory(filePath: string, fileName: string): 'logo' | 'flyer' | 'instagram' | 'website' | 'video' {
   const fullPath = (filePath + '/' + fileName).toLowerCase();
+  const ext = path.extname(fileName).toLowerCase();
+  if (['.mp4', '.mov', '.webm', '.ogg'].includes(ext) || fullPath.includes('video')) return 'video';
   if (fullPath.includes('logo')) return 'logo';
   if (fullPath.includes('flyer')) return 'flyer';
   if (fullPath.includes('instagram') || fullPath.includes('insta')) return 'instagram';
   if (fullPath.includes('website') || fullPath.includes('web')) return 'website';
-  if (fullPath.includes('video') || fullPath.endsWith('.mp4') || fullPath.endsWith('.mov') || fullPath.endsWith('.webm')) return 'video';
   return 'logo'; // Default fallback
 }
 
