@@ -164,20 +164,33 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   const { title, category, description, tools, live_url, project_media } = project;
   const categoryLabel = CATEGORY_LABELS[category] || category;
 
+  // Find video and image media elements
+  const videoMedia = project_media && project_media.length > 0 
+    ? project_media.find(m => m.media_type === 'video')
+    : null;
+
+  const imageMedia = project_media && project_media.length > 0
+    ? project_media.find(m => m.media_type === 'image')
+    : null;
+
+  const isVideo = !!videoMedia || category === 'video';
+
   // Resolve media resource URL
   let mediaUrl = '';
-  let mediaType: 'image' | 'video' = 'image';
+  let posterUrl = '';
 
-  if (project_media && project_media.length > 0) {
-    const primaryMedia = project_media[0];
-    mediaType = primaryMedia.media_type;
-    
-    if (isDbProject) {
-      mediaUrl = getMediaPublicUrl(primaryMedia.storage_path);
-    } else {
-      // For placeholder templates, use standard working CDN files
-      mediaUrl = FALLBACK_VISUAL_URLS[category] || '';
+  if (isDbProject) {
+    if (isVideo && videoMedia) {
+      mediaUrl = getMediaPublicUrl(videoMedia.storage_path);
+      if (imageMedia) {
+        posterUrl = getMediaPublicUrl(imageMedia.storage_path);
+      }
+    } else if (imageMedia) {
+      mediaUrl = getMediaPublicUrl(imageMedia.storage_path);
     }
+  } else {
+    // For placeholder templates, use standard working CDN files
+    mediaUrl = FALLBACK_VISUAL_URLS[category] || '';
   }
 
   return (
@@ -199,10 +212,11 @@ export default async function ProjectDetailPage({ params }: PageProps) {
       {/* 2. Media Render Frame */}
       <section className="w-full">
         {mediaUrl ? (
-          category === 'video' || mediaType === 'video' ? (
+          isVideo ? (
             <div className="overflow-hidden rounded-xl border border-border bg-black aspect-[9/16] max-w-sm mx-auto w-full flex items-center justify-center shadow-2xl">
               <video
                 src={mediaUrl}
+                poster={posterUrl || undefined}
                 controls
                 autoPlay={false}
                 playsInline

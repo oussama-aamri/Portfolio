@@ -35,17 +35,29 @@ export default function ProjectCard({ project, variant }: ProjectCardProps) {
   const handleMouseLeave = () => {
     if (videoRef.current) {
       videoRef.current.pause();
-      videoRef.current.currentTime = 0;
+      // Reload video to reset state and show poster again
+      videoRef.current.load();
     }
   };
   
-  // Find primary image/video (position 0 or first item)
-  const primaryMedia = project_media && project_media.length > 0 
-    ? project_media[0] 
+  // Find video and image media elements
+  const videoMedia = project_media && project_media.length > 0 
+    ? project_media.find(m => m.media_type === 'video')
     : null;
 
-  const publicUrl = primaryMedia ? getMediaPublicUrl(primaryMedia.storage_path) : null;
-  const isVideo = primaryMedia?.media_type === 'video';
+  const imageMedia = project_media && project_media.length > 0
+    ? project_media.find(m => m.media_type === 'image')
+    : null;
+
+  const isVideo = !!videoMedia;
+
+  const publicUrl = isVideo 
+    ? (videoMedia ? getMediaPublicUrl(videoMedia.storage_path) : null)
+    : (imageMedia ? getMediaPublicUrl(imageMedia.storage_path) : null);
+
+  const posterUrl = isVideo && imageMedia 
+    ? getMediaPublicUrl(imageMedia.storage_path) 
+    : null;
 
   // Automatically default to portrait for video category
   const cardVariant = variant || (category === 'video' ? 'portrait' : 'landscape');
@@ -79,6 +91,7 @@ export default function ProjectCard({ project, variant }: ProjectCardProps) {
               <video
                 ref={videoRef}
                 src={publicUrl}
+                poster={posterUrl || undefined}
                 muted
                 loop
                 playsInline
@@ -165,6 +178,7 @@ export default function ProjectCard({ project, variant }: ProjectCardProps) {
               <video
                 ref={videoRef}
                 src={publicUrl}
+                poster={posterUrl || undefined}
                 muted
                 loop
                 playsInline

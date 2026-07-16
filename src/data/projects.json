@@ -111,6 +111,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Afriquia Vid.mp4",
         "position": 0
+      },
+      {
+        "id": "0c3db959-564b-4b54-92a6-965de31f6871",
+        "project_id": "f69802bc-c711-4abd-b26b-6828dc44bd16",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Afriquia Vid.png",
+        "position": 1
       }
     ]
   },
@@ -134,6 +141,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Aftercan Tek013.mp4",
         "position": 0
+      },
+      {
+        "id": "9d85b055-6151-455b-b207-348f92f21f71",
+        "project_id": "fc2711e6-23cc-4564-93aa-64b62c3f5d68",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Aftercan Tek013.png",
+        "position": 1
       }
     ]
   },
@@ -157,6 +171,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Airbnb Vid.mp4",
         "position": 0
+      },
+      {
+        "id": "235448ae-6ba4-4c7b-b7bf-e3cedd063055",
+        "project_id": "92ac6945-e230-4664-8ae0-59c4c38b311e",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Airbnb Vid.png",
+        "position": 1
       }
     ]
   },
@@ -180,6 +201,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Ayoub Vid nf.mp4",
         "position": 0
+      },
+      {
+        "id": "8d68cafd-97ba-4249-868c-a9d14d57231a",
+        "project_id": "c39b2104-228b-4a7c-949c-10780dc847d2",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Ayoub Vid nf.png",
+        "position": 1
       }
     ]
   },
@@ -203,6 +231,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Beldi Events.mp4",
         "position": 0
+      },
+      {
+        "id": "43840a21-8571-4191-bf80-261c2678986f",
+        "project_id": "6616a435-d79a-4a8f-8a3c-e9dc48e82f42",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Beldi Events.png",
+        "position": 1
       }
     ]
   },
@@ -226,6 +261,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Biig ramy 1.mp4",
         "position": 0
+      },
+      {
+        "id": "05a0fdb7-a0e7-445f-a3b4-80ba48b79de2",
+        "project_id": "f5245b9f-f305-4f8c-9444-35021628b653",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Biig ramy 1.png",
+        "position": 1
       }
     ]
   },
@@ -249,6 +291,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Bureaux x2.mp4",
         "position": 0
+      },
+      {
+        "id": "6036492c-873a-4c43-aad5-05e97754897c",
+        "project_id": "352cf0c3-6fd0-4c5c-8b40-7c3c36826365",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Bureaux x2.png",
+        "position": 1
       }
     ]
   },
@@ -272,6 +321,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Casio.mp4",
         "position": 0
+      },
+      {
+        "id": "1b804137-655b-4e99-98d6-b90a42d82792",
+        "project_id": "2445bd68-b5d8-4898-8016-23eda2321325",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Casio.png",
+        "position": 1
       }
     ]
   },
@@ -295,6 +351,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Dacia Vid.mp4",
         "position": 0
+      },
+      {
+        "id": "7e9898bd-ad35-48e9-a073-ecad089bebbe",
+        "project_id": "7fe062f7-a6f4-462d-b592-c737e7e2ddab",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Dacia Vid.png",
+        "position": 1
       }
     ]
   },
@@ -318,6 +381,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Dan Charkiat x2.mp4",
         "position": 0
+      },
+      {
+        "id": "7d2b2014-ad4d-4a89-8098-e9de42f888c5",
+        "project_id": "a561bc26-3bdb-408a-b427-c6773a29a8a5",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Dan Charkiat x2.png",
+        "position": 1
       }
     ]
   },
@@ -341,6 +411,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Esca x2.mp4",
         "position": 0
+      },
+      {
+        "id": "79e74b0c-3e26-46d5-ab10-525fd9e6d42a",
+        "project_id": "98c19f0c-1e97-4755-9f62-6f8e94ecb1ec",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Esca x2.png",
+        "position": 1
       }
     ]
   },
@@ -364,6 +441,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Fayou Compil.mp4",
         "position": 0
+      },
+      {
+        "id": "7681073c-56e6-4169-9151-b8159e60e765",
+        "project_id": "25b9c679-7570-45d3-a0f6-b36b5ad287f7",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Fayou Compil.png",
+        "position": 1
       }
     ]
   },
@@ -387,6 +471,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Fayou Randonn.mp4",
         "position": 0
+      },
+      {
+        "id": "f4d93248-810f-495e-bba0-aa6e2107e0ba",
+        "project_id": "fbc4a83c-ad0a-4675-8f4a-9532944f8654",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Fayou Randonn.png",
+        "position": 1
       }
     ]
   },
@@ -410,6 +501,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Hindi Vid.mp4",
         "position": 0
+      },
+      {
+        "id": "1dea7923-3d0a-4a5a-a861-0f42c89cea70",
+        "project_id": "7e705f13-32b6-4e1d-a08f-9db496a5c55c",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Hindi Vid.png",
+        "position": 1
       }
     ]
   },
@@ -433,6 +531,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Porta P Vid.mp4",
         "position": 0
+      },
+      {
+        "id": "52992994-784e-423a-bed1-4a6741bfe77c",
+        "project_id": "fb2d077a-4eca-46aa-ba48-f862da0441ad",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Porta P Vid.png",
+        "position": 1
       }
     ]
   },
@@ -456,6 +561,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Shareco.mp4",
         "position": 0
+      },
+      {
+        "id": "b5d49536-41be-4fd2-839e-3834d0a4a79b",
+        "project_id": "f6b769d0-1513-4096-a60b-5fa8a3d998f7",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Shareco.png",
+        "position": 1
       }
     ]
   },
@@ -479,6 +591,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Spa Video 2 x2.mp4",
         "position": 0
+      },
+      {
+        "id": "1a7fa2a2-a6a3-43da-a93c-f71c03135a3f",
+        "project_id": "6b756e55-4394-4e31-88ff-12ec4c4079a8",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Spa Video 2 x2.png",
+        "position": 1
       }
     ]
   },
@@ -502,6 +621,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Spa video 1 x2.mp4",
         "position": 0
+      },
+      {
+        "id": "025cd0d7-a6e2-4de8-aadd-2483b90828d0",
+        "project_id": "9a55cb42-2b2a-4381-a4e6-1f556e72e318",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Spa video 1 x2.png",
+        "position": 1
       }
     ]
   },
@@ -525,6 +651,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Tabaq Compil.mp4",
         "position": 0
+      },
+      {
+        "id": "c4cf3089-6342-46bd-92e6-9b5a638da5ea",
+        "project_id": "624f4474-3dff-424a-829c-e7e26b3fab5a",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Tabaq Compil.png",
+        "position": 1
       }
     ]
   },
@@ -548,6 +681,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Tabaq Open.mp4",
         "position": 0
+      },
+      {
+        "id": "f5c42ccb-f58e-4aee-bfb0-9e9283ed56c4",
+        "project_id": "ccd4c6fa-74a7-4bd3-987d-20d2f8f0abcf",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Tabaq Open.png",
+        "position": 1
       }
     ]
   },
@@ -571,6 +711,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Thermo.mp4",
         "position": 0
+      },
+      {
+        "id": "f342f139-9b4e-45a7-8b84-befeddfd9564",
+        "project_id": "d4b14544-f9af-4243-a2aa-232122d6a1b6",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Thermo.png",
+        "position": 1
       }
     ]
   },
@@ -594,6 +741,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Total Energies.mp4",
         "position": 0
+      },
+      {
+        "id": "bc66508e-0c48-459e-82e4-0fb3fb6d4008",
+        "project_id": "2b7eedda-3b12-41b7-9a73-5913fc6c6b47",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Total Energies.png",
+        "position": 1
       }
     ]
   },
@@ -617,6 +771,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Trendy para.mp4",
         "position": 0
+      },
+      {
+        "id": "d5446415-e74e-49d4-830c-aad14d0cfe67",
+        "project_id": "14f8d1a1-01d5-4475-9ed6-f9a77fc4b5d4",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Trendy para.png",
+        "position": 1
       }
     ]
   },
@@ -640,6 +801,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Webook 2 fes.mp4",
         "position": 0
+      },
+      {
+        "id": "ee60ec59-9ef7-4821-84de-7b9e92288dd8",
+        "project_id": "bc9f51a5-1b84-4264-b36a-60ffd9e73587",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Webook 2 fes.png",
+        "position": 1
       }
     ]
   },
@@ -663,6 +831,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Weeding 1.mp4",
         "position": 0
+      },
+      {
+        "id": "05d61685-587b-4b76-a497-ba8dcb204ae6",
+        "project_id": "5dc2035f-bfd7-4607-b2b6-9613104ce0b0",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/Weeding 1.png",
+        "position": 1
       }
     ]
   },
@@ -686,6 +861,13 @@
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/ecotech Vid.mp4",
         "position": 0
+      },
+      {
+        "id": "0ed5331c-2374-4c06-8972-7b27a5ceb7b4",
+        "project_id": "527e3443-e47e-48f1-babe-655639c27d89",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/ecotech Vid.png",
+        "position": 1
       }
     ]
   },
@@ -708,6 +890,36 @@
         "project_id": "df1bfe26-c369-449f-b11f-2dd47da3d622",
         "media_type": "video",
         "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/taekwondo.mp4",
+        "position": 0
+      },
+      {
+        "id": "8de22378-8dc5-444a-9f80-72a64bc53b98",
+        "project_id": "df1bfe26-c369-449f-b11f-2dd47da3d622",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/taekwondo.png",
+        "position": 1
+      }
+    ]
+  },
+  {
+    "id": "9dfbbb4d-75b5-4d6b-821c-03dfe494b83b",
+    "title": "20 X2",
+    "slug": "20-x2",
+    "category": "video",
+    "description": "Imported asset from GitHub repository path assets/videos/Covers/20 x2.png.",
+    "tools": [
+      "Figma"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-16T16:42:26.431Z",
+    "project_media": [
+      {
+        "id": "de9c87ad-de33-4647-81bd-2d03473c1906",
+        "project_id": "9dfbbb4d-75b5-4d6b-821c-03dfe494b83b",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/videos/Covers/20 x2.png",
         "position": 0
       }
     ]
