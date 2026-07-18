@@ -2,7 +2,6 @@
 
 import { useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { ProjectWithMedia } from '@/types/database.types';
 import { getMediaPublicUrl } from '@/lib/supabase';
 import { ArrowRight, Film, Globe, Image as ImageIcon } from 'lucide-react';
@@ -59,189 +58,84 @@ export default function ProjectCard({ project, variant }: ProjectCardProps) {
     ? getMediaPublicUrl(imageMedia.storage_path) 
     : null;
 
-  // Automatically default to portrait for video category
-  const cardVariant = variant || (category === 'video' ? 'portrait' : 'landscape');
-
   const categoryLabel = CATEGORY_LABELS[category] || category;
 
-  // Icon depending on category
   const renderCategoryIcon = () => {
     switch (category) {
       case 'video':
-        return <Film className="h-3.5 w-3.5" />;
+        return <Film className="h-3 w-3" />;
       case 'website':
-        return <Globe className="h-3.5 w-3.5" />;
+        return <Globe className="h-3 w-3" />;
       default:
-        return <ImageIcon className="h-3.5 w-3.5" />;
+        return <ImageIcon className="h-3 w-3" />;
     }
   };
 
-  if (cardVariant === 'portrait') {
-    return (
-      <Link 
-        href={`/work/${slug}`}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        className="group block relative w-full aspect-[9/16] overflow-hidden rounded-xl border border-border bg-[#0f0f12] transition-all duration-300 hover:border-brand/40 hover:shadow-[0_12px_30px_-10px_rgba(139,92,246,0.2)]"
-      >
-        {/* Media background wrapper */}
-        <div className="absolute inset-0 h-full w-full bg-[#070709] overflow-hidden">
-          {publicUrl ? (
-            isVideo ? (
-              <video
-                ref={videoRef}
-                src={publicUrl}
-                poster={posterUrl || undefined}
-                muted
-                loop
-                playsInline
-                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-              />
-            ) : (
-              <Image
-                src={publicUrl}
-                alt={title}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                unoptimized
-              />
-            )
-          ) : (
-            <div className="flex h-full w-full items-center justify-center text-muted-foreground">
-              <ImageIcon className="h-8 w-8 opacity-40" />
-            </div>
-          )}
-
-          {/* Dynamic hover overlay tint */}
-          <div className="absolute inset-0 bg-brand/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          
-          {/* Smooth black gradient fade at the bottom */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent z-0" />
-        </div>
-
-        {/* Content details at the bottom */}
-        <div className="absolute bottom-0 left-0 w-full p-5 flex flex-col z-10">
-          {/* Category Badge */}
-          <span className="inline-flex items-center gap-1.5 font-mono text-[9px] font-semibold text-brand tracking-widest uppercase mb-3">
-            {renderCategoryIcon()}
-            {categoryLabel}
-          </span>
-
-          {/* Title */}
-          <h3 className="font-heading text-lg font-bold text-foreground group-hover:text-brand transition-colors duration-200 line-clamp-2 mb-2">
-            {title}
-          </h3>
-
-          {/* Tools / Skills Tags */}
-          {tools && tools.length > 0 && (
-            <div className="mt-1 flex flex-wrap gap-1">
-              {tools.slice(0, 3).map((tool) => (
-                <span 
-                  key={tool} 
-                  className="rounded border border-border bg-black/40 backdrop-blur-xs px-2 py-0.5 font-mono text-[9px] font-medium text-muted-foreground"
-                >
-                  {tool}
-                </span>
-              ))}
-              {tools.length > 3 && (
-                <span className="font-mono text-[9px] text-muted-foreground/80 pl-0.5 self-center">
-                  +{tools.length - 3}
-                </span>
-              )}
-            </div>
-          )}
-
-          {/* View Project Action */}
-          <div className="mt-5 flex items-center gap-1.5 font-mono text-[10px] font-semibold text-muted-foreground group-hover:text-foreground transition-colors duration-200 pt-3 border-t border-border/30">
-            <span>run_case_study</span>
-            <ArrowRight className="h-3 w-3 text-brand transition-transform duration-200 group-hover:translate-x-1" />
-          </div>
-        </div>
-      </Link>
-    );
+  // Determine container and media layout style classes dynamically
+  let containerClass = "group block relative w-full overflow-hidden rounded-2xl border border-border bg-[#0f0f12] shadow-sm hover:shadow-2xl transition-all duration-300 hover:border-brand/40";
+  let mediaClass = "w-full transition-transform duration-300 group-hover:scale-[1.04]";
+  
+  if (variant === 'portrait') {
+    containerClass += " aspect-[9/16]";
+    mediaClass += " absolute inset-0 h-full object-cover";
+  } else if (variant === 'landscape') {
+    containerClass += " aspect-[16/10]";
+    mediaClass += " absolute inset-0 h-full object-cover";
+  } else {
+    // Masonry / Natural aspect ratio mode
+    mediaClass += " h-auto object-contain";
   }
 
-  // Default Landscape Layout
   return (
     <Link 
       href={`/work/${slug}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="group block flex flex-col overflow-hidden rounded-xl border border-border bg-[#0f0f12] transition-all duration-300 hover:-translate-y-1 hover:border-brand/40 hover:shadow-[0_12px_30px_-10px_rgba(139,92,246,0.15)]"
+      className={containerClass}
     >
-      {/* Thumbnail Wrapper */}
-      <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#070709] border-b border-border/60">
+      {/* Media Content */}
+      <div className={variant ? "relative h-full w-full" : "w-full bg-[#070709] overflow-hidden"}>
         {publicUrl ? (
           isVideo ? (
-            <div className="relative h-full w-full">
-              <video
-                ref={videoRef}
-                src={publicUrl}
-                poster={posterUrl || undefined}
-                muted
-                loop
-                playsInline
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-              />
-            </div>
+            <video
+              ref={videoRef}
+              src={publicUrl}
+              poster={posterUrl || undefined}
+              muted
+              loop
+              playsInline
+              className={mediaClass}
+            />
           ) : (
-            <div className="relative h-full w-full">
-              <Image
-                src={publicUrl}
-                alt={title}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                unoptimized
-              />
-            </div>
+            <img
+              src={publicUrl}
+              alt={title}
+              className={mediaClass}
+            />
           )
         ) : (
-          <div className="flex h-full w-full items-center justify-center text-muted-foreground bg-[#070709]">
+          <div className="flex aspect-[16/10] w-full items-center justify-center text-muted-foreground bg-[#070709] p-10">
             <ImageIcon className="h-8 w-8 opacity-40" />
           </div>
         )}
-
-        {/* Hover overlay indicator */}
-        <div className="absolute inset-0 bg-brand/5 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
       </div>
 
-      {/* Detail Block */}
-      <div className="flex flex-1 flex-col p-5">
+      {/* Modern Behance/Pinterest Hover Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-transparent flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
         {/* Category Badge */}
-        <span className="inline-flex items-center gap-1.5 font-mono text-[9px] font-semibold text-brand tracking-widest uppercase mb-3">
+        <span className="inline-flex items-center gap-1.5 font-mono text-[9px] font-semibold text-brand tracking-widest uppercase mb-2">
           {renderCategoryIcon()}
           {categoryLabel}
         </span>
 
-        {/* Title */}
-        <h3 className="font-heading text-base font-bold text-foreground group-hover:text-brand transition-colors duration-200 line-clamp-1 mb-2">
+        {/* Project Title */}
+        <h3 className="font-heading text-lg font-bold text-white mb-3 leading-tight line-clamp-2">
           {title}
         </h3>
 
-        {/* Tools / Skills Tags */}
-        {tools && tools.length > 0 && (
-          <div className="mt-1 flex flex-wrap gap-1">
-            {tools.slice(0, 3).map((tool) => (
-              <span 
-                key={tool} 
-                className="rounded border border-border bg-[#141418] px-2 py-0.5 font-mono text-[9px] font-medium text-muted-foreground"
-              >
-                {tool}
-              </span>
-            ))}
-            {tools.length > 3 && (
-              <span className="font-mono text-[9px] text-muted-foreground/80 pl-0.5">
-                +{tools.length - 3}
-              </span>
-            )}
-          </div>
-        )}
-
-        {/* View Project prompt */}
-        <div className="mt-5 flex items-center gap-1.5 font-mono text-[10px] font-semibold text-muted-foreground group-hover:text-foreground transition-colors duration-200 mt-auto pt-3 border-t border-border/30">
-          <span>run_case_study</span>
+        {/* View Project Action Indicator */}
+        <div className="flex items-center gap-1.5 font-mono text-[10px] font-semibold text-neutral-300">
+          <span>View Project</span>
           <ArrowRight className="h-3 w-3 text-brand transition-transform duration-200 group-hover:translate-x-1" />
         </div>
       </div>
