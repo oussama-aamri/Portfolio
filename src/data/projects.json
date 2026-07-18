@@ -923,5 +923,97 @@
         "position": 0
       }
     ]
+  },
+  {
+    "id": "903196d7-01fd-4cc4-8530-2c670ecf3a37",
+    "title": "Envato Labs Image Edit 1",
+    "slug": "envato-labs-image-edit-1",
+    "category": "logo",
+    "description": "Imported asset from GitHub repository path assets/Images/envato-labs-image-edit (1).jpg.",
+    "tools": [
+      "Adobe Illustrator"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-18T19:50:55.009Z",
+    "project_media": [
+      {
+        "id": "f3113ca0-d2e7-434a-a1b3-7bb81b47f2c7",
+        "project_id": "903196d7-01fd-4cc4-8530-2c670ecf3a37",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/Images/envato-labs-image-edit (1).jpg",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "4f3b3156-7be1-48d5-b0fc-635084d97204",
+    "title": "Envato Labs Image Edit 4",
+    "slug": "envato-labs-image-edit-4",
+    "category": "logo",
+    "description": "Imported asset from GitHub repository path assets/Images/envato-labs-image-edit (4).jpg.",
+    "tools": [
+      "Adobe Illustrator"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-18T19:50:55.009Z",
+    "project_media": [
+      {
+        "id": "61825a3c-1d95-4859-916b-e76c4dd51e27",
+        "project_id": "4f3b3156-7be1-48d5-b0fc-635084d97204",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/Images/envato-labs-image-edit (4).jpg",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "13fc63c7-0f5e-4172-9f98-f149ed54a43a",
+    "title": "Envato Labs Image Edit 5",
+    "slug": "envato-labs-image-edit-5",
+    "category": "logo",
+    "description": "Imported asset from GitHub repository path assets/Images/envato-labs-image-edit (5).jpg.",
+    "tools": [
+      "Adobe Illustrator"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-18T19:50:55.009Z",
+    "project_media": [
+      {
+        "id": "690434a9-0cfc-4a01-9dd1-0f4f708c6c01",
+        "project_id": "13fc63c7-0f5e-4172-9f98-f149ed54a43a",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/Images/envato-labs-image-edit (5).jpg",
+        "position": 0
+      }
+    ]
+  },
+  {
+    "id": "97cf3ae0-438d-4bb7-80d4-8c6cce2459da",
+    "title": "Envato Labs Image Edit",
+    "slug": "envato-labs-image-edit",
+    "category": "logo",
+    "description": "Imported asset from GitHub repository path assets/Images/envato-labs-image-edit.jpg.",
+    "tools": [
+      "Adobe Illustrator"
+    ],
+    "live_url": null,
+    "featured": false,
+    "sort_order": 0,
+    "created_at": "2026-07-18T19:50:55.010Z",
+    "project_media": [
+      {
+        "id": "e01bff19-82cf-4b00-8b73-a61eb8bb01ca",
+        "project_id": "97cf3ae0-438d-4bb7-80d4-8c6cce2459da",
+        "media_type": "image",
+        "storage_path": "https://raw.githubusercontent.com/oussama-aamri/Portfolio/main/assets/Images/envato-labs-image-edit.jpg",
+        "position": 0
+      }
+    ]
   }
 ]
