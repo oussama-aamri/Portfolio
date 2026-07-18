@@ -10,6 +10,7 @@ interface WorkGridProps {
 
 const CATEGORY_TABS = [
   { id: 'all', label: 'All' },
+  { id: 'images', label: 'Images' },
   { id: 'logo', label: 'Logos' },
   { id: 'flyer', label: 'Flyers' },
   { id: 'instagram', label: 'Instagram' },
@@ -22,7 +23,9 @@ export default function WorkGrid({ initialProjects }: WorkGridProps) {
 
   const filteredProjects = activeTab === 'all'
     ? initialProjects
-    : initialProjects.filter(project => project.category === activeTab);
+    : activeTab === 'images'
+      ? initialProjects.filter(project => project.category !== 'video')
+      : initialProjects.filter(project => project.category === activeTab);
 
   return (
     <div className="flex flex-col gap-10">
